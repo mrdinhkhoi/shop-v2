@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+<!-- <div class="container">
+  <div class="showproduct">
+    <div class="col-md-5">
+      <%= image_tag @product.image %><br>
+      <% @product_attachments.each do |p| %>
+        <a class="fancybox" rel="gallery1" href="<%= p.image_url %>">
+          <img src="<%= p.image_url %>" style=" width: auto; height:100px; " alt="" />
+        </a>
+      <% end %>
+    </div>
+
+    <div class="col-md-7">
+      <ul class="accordion-tabs">
+        <li class="tab-header-and-content">
+          <a href="javascript:void(0)" class="tab-link">Description</a>
+          <div class="tab-content">
+            <strong><%= @product.name %></strong><br>
+            <p> <%= @product.description %></p>
+          </div>
+        </li>
+        <li class="tab-header-and-content">
+          <a href="javascript:void(0)" class="tab-link">Price</a>
+          <div class="tab-content">
+            <p><%= @product.price %> $</p>    
+          </div>
+        </li>
+        <li class="tab-header-and-content">
+          <a href="javascript:void(0)" class="tab-link">Year</a>
+          <div class="tab-content">
+            <p><%= @product.year %></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button>add to card</button>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="small-12 medium-5 large-4 columns">
+    <div class="columns"><%= image_tag @product.image %></div>
+    <div class="columns" style="padding-top: 0.5em;">
+      <% @product_attachments.each do |p| %>
+        <a class="fancybox" rel="gallery1" href="<%= p.image_url %>">
+          <img src="<%= p.image_url %>" style=" width: auto; height:50px; " alt="" />
+        </a>
+      <% end %>    
+    </div>
+  </div>
+  <div class="small-12 medium-7 large-8 columns">
+    <ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Description</a></li>
+      <li class="tabs-title"><a href="#panel2">Price</a></li>
+      <li class="tabs-title"><a href="#panel3">Year</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="example-tabs">
+      <div class="tabs-panel is-active" id="panel1">
+        <strong><%= @product.name %></strong><br>
+        <p> <%= @product.description %></p>
+      </div>
+      <div class="tabs-panel" id="panel2">
+        <p><%= @product.price %> $</p>
+      </div>
+      <div class="tabs-panel" id="panel3">
+        <p><%= @product.year %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+</div>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("a.fancybox").fancybox();
+  });
+</script>
