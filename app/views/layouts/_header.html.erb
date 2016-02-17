@@ -48,13 +48,13 @@
  <header>
   <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">Store</div>
+    <div class="title-bar-title"><%= link_to "Products", products_path %></div>
   </div>
   <div class="top-bar" id="example-menu">
     <div class="row">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Store</li>
+          <li class="menu-text"><%= link_to "Products", products_path %></li>
           <li class="has-submenu">
             <a href="#">One</a>
             <ul class="submenu menu vertical" data-submenu>
@@ -64,7 +64,7 @@
             </ul>
           </li>
           <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
+          <li><li><%= link_to "New", new_product_path %></li></li>
         </ul>
       </div>
       <div class="top-bar-right">          

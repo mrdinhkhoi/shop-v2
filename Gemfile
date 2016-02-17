@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 
 gem 'carrierwave'
+gem "mini_magick"
 
 # ui-ux
 gem 'foundation-rails'

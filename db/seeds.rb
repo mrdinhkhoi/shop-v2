@@ -6,11 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Product.delete_all
+
 30.times do |n|
   name = Faker::Commerce.product_name
   description = Faker::Lorem.paragraphs
   price = Faker::Commerce.price
-  image = Faker::Placeholdit.image
+  image = File.open(File.join(Rails.root, 'app/assets/images/11.jpg'))
   year = Faker::Date.forward(23)
   Product.create!(name: name,
                description: description,
