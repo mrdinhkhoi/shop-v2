@@ -5,14 +5,24 @@
     <div class="columns">
       <% @product_attachments.each do |p| %>
         <a class="fancybox" rel="gallery1" href="<%= p.image_url %>">
-          <img src="<%= p.image_url %>" style=" width: 200px; height: auto; padding-bottom: 1em;" alt="" />
+            <div class="hovergallery">
+              <img src="<%= p.image_url %>" style=" width: 200px; height: auto; padding-bottom: 1em;" alt="" />
+            </div>
         </a>
-      <% end %>    
+        
+      <% end %> 
     </div>
   </div>
   <div class="small-9 medium-9 large-4 columns">
-    <div class="columns"><%= image_tag @product.image %></div>
-    <div class="columns" style="padding-top: 1em;"><button class="button">Add to cards</button></div>
+    <div class="columns">
+      <a class="fancybox" rel="gallery1" href="<%= @product.image_url %>">
+        <img src="<%= @product.image_url %>" alt="" />
+      </a>
+      
+    </div>
+    <div class="columns" style="padding-top: 1em;">
+      <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+    </div>
 
   </div>
   <div class="small-12 medium-12 large-7 columns">
@@ -42,3 +52,4 @@
     $("a.fancybox").fancybox();
   });
 </script>
+

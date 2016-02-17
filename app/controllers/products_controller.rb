@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     # @products = Product.all
     @q = Product.ransack(params[:q])
     @products = @q.result(distinct: true).order('created_at DESC')
+    @cart = current_cart
   end
   
   def search
