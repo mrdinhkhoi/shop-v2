@@ -1,13 +1,14 @@
 
 <div class="container">
-
   <div class="row">
     <% @products.each do |product| %>
       <div class="small-12 medium-6 large-3 columns end">
         <div class="card">
           <div class="card-image">
             <%= link_to product do %>
-              <img src="<%= product.image_url %>" style=" width: 300px; height:200px; " alt="" />
+              <div class="hovergallery">
+                <img src="<%= product.image_url %>" style=" width: 300px; height:200px; " alt="" />
+              </div>
             <% end %>
           </div>
           <div class="card-header">
@@ -15,8 +16,8 @@
           </div>
           <div class="card-copy">
             <%= truncate(strip_tags(product.description)) %><br>
-            Published in <%= product.year %><br>
-            <strong><%= product.price %> $</strong>
+            Price <strong><%= product.price %> $</strong>
+            <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
           </div>
         </div>
       </div>

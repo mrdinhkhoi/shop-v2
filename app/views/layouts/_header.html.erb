@@ -17,7 +17,9 @@
             </ul>
           </li>
           <li><a href="#">Two</a></li>
-          <li><li><%= link_to "New", new_product_path %></li></li>
+          <li><%= link_to "New", new_product_path %></li>
+          <li><%= link_to "Cart", cart_path(current_cart) %> </li>
+          
         </ul>
       </div>
       <div class="top-bar-right">          
