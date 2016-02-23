@@ -1,5 +1,17 @@
-<tr>
-	<td><%= line_item.quantity %>&times;</td>
-	<td><%= line_item.product.name %></td>
-	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-</tr>
+<tbody>
+	<tr>
+		<td><img src="<%= line_item.product.image_url %>" style=" width: 60px; height:40px; " alt="" /></td>
+		<td><%= link_to line_item.product do %>
+				<%= line_item.product.name %>
+			<% end %>
+		</td>
+		<td>&times; <%= line_item.quantity %></td>
+		<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+		<td>
+			<%= button_to line_item, method: :delete, confirm: 'Are you sure?' do %>
+		        <span aria-hidden="true"><i class="fi-x" style="color: red;"></i></span>
+			<%end%>
+		</td>
+	</tr>
+</tbody>
+

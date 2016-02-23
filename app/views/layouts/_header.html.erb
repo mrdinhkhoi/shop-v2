@@ -18,7 +18,11 @@
           </li>
           <li><a href="#">Two</a></li>
           <li><%= link_to "New", new_product_path %></li>
-          <li><%= link_to "Cart", cart_path(current_cart) %> </li>
+          <li>
+              <%= link_to @cart do %> 
+                <i class="fi-shopping-cart"></i>
+              <%end%>
+          </li>
           
         </ul>
       </div>

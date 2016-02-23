@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :line_items
   resources :carts
   resources :product_attachments
@@ -10,6 +11,10 @@ Rails.application.routes.draw do
     collection do
       match 'search' => 'products#search', via: [:get, :post], as: :search
     end
+  end
+  
+  resources :products do
+    get :who_bought, on: :member
   end
 
   # You can have the root of your site routed with "root"

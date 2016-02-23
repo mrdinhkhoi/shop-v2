@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="small-3 medium-3 large-1 columns">
     <div class="columns">
@@ -21,11 +19,13 @@
       
     </div>
     <div class="columns" style="padding-top: 1em;">
-      <%= button_to 'Add to Cart', line_items_path(product_id: @product), remote: true %>
+      <%= button_to line_items_path(product_id: @product), remote: true, class: 'alert hollow button' do %>
+        <i class="fi-shopping-cart"></i>&nbsp;&nbsp;Add to cart
+      <% end %>
     </div>
 
   </div>
-  <div class="small-12 medium-12 large-7 columns">
+  <div class="small-12 medium-12 large-7 columns end">
     <ul class="tabs" data-tabs id="example-tabs">
       <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Description</a></li>
       <li class="tabs-title"><a href="#panel2">Price</a></li>

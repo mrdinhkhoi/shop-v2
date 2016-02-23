@@ -38,6 +38,7 @@ gem "mini_magick"
 
 # ui-ux
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 # fancybox for showing image in lightbox
 gem 'fancybox2-rails', '~> 0.2.8'
@@ -45,7 +46,7 @@ gem 'fancybox2-rails', '~> 0.2.8'
 #search
 gem "ransack"
 
-
+gem 'will_paginate'
 
 gem 'bcrypt',               '3.1.7'
 

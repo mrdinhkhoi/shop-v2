@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all
     @q = Product.ransack(params[:q])
-    @products = @q.result(distinct: true).order('created_at DESC')
+    @products = @q.result(distinct: true).order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
     @cart = current_cart
   end
   
@@ -69,6 +69,13 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def who_bought
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.atom
     end
   end
 

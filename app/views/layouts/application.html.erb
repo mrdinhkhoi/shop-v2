@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "V/S Shop -----(very special)" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "V/S Shop ----- (very special)" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
@@ -13,7 +13,10 @@
 
   <body>
     <%= render 'layouts/header' %>
+     <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
     <%= yield %>
-   <!--  <%= render 'layouts/footer' %> -->
+    <%= render 'layouts/footer' %> 
   </body>
 </html>
