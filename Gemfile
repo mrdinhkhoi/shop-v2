@@ -45,8 +45,9 @@ gem 'fancybox2-rails', '~> 0.2.8'
 
 #search
 gem "ransack"
-
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-foundation'
+gem 'foundation_rails_helper'
 
 gem 'bcrypt',               '3.1.7'
 

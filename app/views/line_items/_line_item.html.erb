@@ -6,7 +6,7 @@
 			<% end %>
 		</td>
 		<td>&times; <%= line_item.quantity %></td>
-		<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+		<td class="item_price"><%= line_item.total_price %> $</td>
 		<td>
 			<%= button_to line_item, method: :delete, confirm: 'Are you sure?' do %>
 		        <span aria-hidden="true"><i class="fi-x" style="color: red;"></i></span>

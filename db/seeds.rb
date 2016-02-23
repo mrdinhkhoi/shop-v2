@@ -8,11 +8,11 @@
 
 Product.delete_all
 
-30.times do |n|
+90.times do |n|
   name = Faker::Commerce.product_name
   description = Faker::Lorem.paragraphs
   price = Faker::Commerce.price
-  image = File.open(File.join(Rails.root, 'app/assets/images/11.jpg'))
+  image = File.open(File.join(Rails.root, 'app/assets/images/12.jpg'))
   year = Faker::Date.forward(23)
   Product.create!(name: name,
                description: description,
